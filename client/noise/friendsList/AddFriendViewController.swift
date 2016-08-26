@@ -8,6 +8,7 @@ class AddFriendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpBackButton()
     }
     
     @IBAction func addFriendTapped(sender: AnyObject) {
@@ -29,6 +30,16 @@ class AddFriendViewController: UIViewController {
             // SEND: friendToAdd to server
             SocketIOManager.sharedInstance.addFriend(friendToAdd!)
         }
+    }
+    
+    func setUpBackButton() {
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(backButtonTapped))
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    func backButtonTapped() {
+        dismissViewControllerAnimated(true, completion: nil)
+    
     }
     
     @objc func handleAddFriendNotification(notification: NSNotification) -> Void {
