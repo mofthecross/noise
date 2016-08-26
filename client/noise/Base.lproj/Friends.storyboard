@@ -75,7 +75,7 @@
                     <connections>
                         <outlet property="friendsTableView" destination="hHF-cs-ffa" id="941-9J-i4P"/>
                         <segue destination="iOG-VH-PPI" kind="show" identifier="addFriendSegue" id="Epv-f0-TCU"/>
-                        <segue destination="veF-Nh-4uO" kind="show" identifier="chatsSegue" id="L94-bX-VcD"/>
+                        <segue destination="veF-Nh-4uO" kind="show" identifier="recentChatsSegue" id="L94-bX-VcD"/>
                         <segue destination="W3V-MQ-jCk" kind="show" identifier="settingsSegue" id="wMD-jU-Jn5"/>
                         <segue destination="oie-k4-3DW" kind="show" identifier="chatScreenSegue" id="EFM-if-UFR"/>
                         <segue destination="pXD-jn-HvK" kind="show" identifier="friendsListToWaitSegue" id="N8V-Z2-RZD"/>
@@ -168,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="968" y="1232"/>
         </scene>
-        <!--ChatsView-->
+        <!--RecentChats-->
         <scene sceneID="17Z-G4-5dN">
             <objects>
-                <viewControllerPlaceholder storyboardName="ChatsView" id="veF-Nh-4uO" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="RecentChats" id="veF-Nh-4uO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNN-8P-n88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1241.5" y="1261"/>

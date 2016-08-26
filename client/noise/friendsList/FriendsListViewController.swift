@@ -279,9 +279,12 @@ class FriendsListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     @IBAction func chatsButtonClicked(sender: AnyObject) {
-        self.performSegueWithIdentifier("chatsSegue", sender: self)
-    }
 
+        let layout = UICollectionViewFlowLayout()
+        let recentChatsController = RecentChatsViewController(collectionViewLayout: layout)
+        self.presentViewController(UINavigationController(rootViewController: recentChatsController), animated: true, completion: nil)
+    }
+    
     @IBAction func settingsButtonClicked(sender: AnyObject) {
         self.performSegueWithIdentifier("settingsSegue", sender: self)
     }
