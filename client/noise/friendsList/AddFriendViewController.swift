@@ -38,7 +38,7 @@ class AddFriendViewController: UIViewController {
     }
     
     func backButtonTapped() {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(false, completion: nil)
     
     }
     
