@@ -4,8 +4,8 @@ import JSQMessagesViewController
 
 class ChatViewController: JSQMessagesViewController {
     
-    let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.greenColor())
-    let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
+    var incomingBubble: JSQMessagesBubbleImage!
+    var outgoingBubble: JSQMessagesBubbleImage!
     
     let realm = try! Realm()
     var messagesFromRealm = List<Message>()
@@ -35,7 +35,7 @@ extension ChatViewController {
     
     func setup() {
         self.title = self.friend.username
-        self.senderId = UIDevice.currentDevice().identifierForVendor?.UUIDString
+        self.senderId = String(realm.objects(User)[0].userID)  //UIDevice.currentDevice().identifierForVendor?.UUIDString
         self.senderDisplayName = UIDevice.currentDevice().identifierForVendor?.UUIDString
         
         let friendInfoButton = UIBarButtonItem(title: "info", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(friendInfoButtonTapped))
@@ -44,6 +44,11 @@ extension ChatViewController {
     
         self.navigationItem.rightBarButtonItem = friendInfoButton
         self.navigationItem.leftBarButtonItem = backButton
+        
+        //chatbubble
+        
+        self.incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
+        self.outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
         
     }
     
