@@ -11,9 +11,11 @@ class FriendsListViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Friends List"
         updateFriendsTable()
         friendsTableView.dataSource = self
         friendsTableView.delegate = self
+        friendsTableView.backgroundView?.backgroundColor = UIColor.whiteColor()
         
         //print("FLVC viewDidLoad");
         

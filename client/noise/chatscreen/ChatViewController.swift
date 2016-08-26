@@ -35,12 +35,13 @@ extension ChatViewController {
     
     func setup() {
         self.title = self.friend.username
-        self.senderId = String(realm.objects(User)[0].userID)  //UIDevice.currentDevice().identifierForVendor?.UUIDString
+        self.senderId = String(realm.objects(User)[0].userID)   //UIDevice.currentDevice().identifierForVendor?.UUIDString
         self.senderDisplayName = UIDevice.currentDevice().identifierForVendor?.UUIDString
         
         let friendInfoButton = UIBarButtonItem(title: "info", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(friendInfoButtonTapped))
         
-        let backButton = UIBarButtonItem(title: "back", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(backButtontapped))
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(backButtonTapped))
+        navigationItem.leftBarButtonItem = backButton
     
         self.navigationItem.rightBarButtonItem = friendInfoButton
         self.navigationItem.leftBarButtonItem = backButton
@@ -55,11 +56,16 @@ extension ChatViewController {
     func friendInfoButtonTapped() -> Void {
         let friendInfoViewController = FriendInfoViewController()
         friendInfoViewController.friendInfo = self.friend
-        self.presentViewController(UINavigationController(rootViewController: friendInfoViewController), animated: true, completion: nil)
+        self.presentViewController(UINavigationController(rootViewController: friendInfoViewController), animated: false, completion: nil)
     }
     
-    func backButtontapped() {
-        dismissViewControllerAnimated(true, completion: nil)
+    func backButtonTapped() {
+        self.dismissViewControllerAnimated(false, completion: nil)
+        
+        //self.presentViewController(UINavigationController(rootViewController: FriendsListViewController()), animated: true, completion: nil)
+        //let layout = UICollectionViewFlowLayout()
+        //let recentChatsController = RecentChatsViewController(collectionViewLayout: layout)
+        //self.presentViewController(UINavigationController(rootViewController: recentChatsController), animated: true, completion: nil)
     }
     
     func updateChatScreen() {

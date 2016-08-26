@@ -58,7 +58,7 @@ extension RecentChatsViewController {
         let chatViewController = ChatViewController()
         chatViewController.friend = (selectedChat as? Friend)!
         
-        self.presentViewController(UINavigationController(rootViewController:chatViewController), animated: true, completion: nil)
+        self.presentViewController(UINavigationController(rootViewController: chatViewController), animated: true, completion: nil)
     }
 }
 
