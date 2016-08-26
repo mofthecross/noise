@@ -273,7 +273,6 @@ class FriendsListViewController: UIViewController, UITableViewDataSource, UITabl
             
             // segue to chatScreen if a boolean flag is true
         }
-
     }
     
     @IBAction func addFriendButtonClicked(sender: AnyObject) {

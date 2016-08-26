@@ -14,6 +14,7 @@ class FriendInfoViewController: UITableViewController{
         print("printing friendInfo on friendinfo ", self.friendInfo)
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reusableCell)
     }
+    
 }
 
 // navigation

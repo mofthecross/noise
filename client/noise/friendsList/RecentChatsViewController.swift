@@ -113,6 +113,7 @@ class RecentChatsCell: InitCellReusableCell {
         addSubview(profileImageView)
         addSubview(dividerLineView)
         
+        
         setupContainerView()
         
         profileImageView.image = UIImage(named: "zuckprofile")
